@@ -1,0 +1,12 @@
+import { createClient } from "@libsql/client";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+
+export const client = createClient({
+  url: process.env.TURSO_DATABASE_URL,
+  authToken: process.env.TURSO_AUTH_TOKEN,
+});
+
+console.log("Successfully connected to Turso!");
